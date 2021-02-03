@@ -1,3 +1,4 @@
+---
 name: Check code style
 
 on: [push, pull_request]
@@ -8,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Lint YAML Files
-      uses: ibiqlik/action-yamllint@v3
+      - name: Lint YAML Files
+        uses: ibiqlik/action-yamllint@v3
 
-    - name: Lint Ansible Playbook
-      uses: ansible/ansible-lint-action@master
-      with:
-        targets: site.yml
+      - name: Lint Ansible Playbook
+        uses: ansible/ansible-lint-action@master
+        with:
+          targets: site.yml
