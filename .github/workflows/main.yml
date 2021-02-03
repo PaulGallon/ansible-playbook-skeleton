@@ -1,4 +1,4 @@
-name: Ansible Lint
+name: Check code style
 
 on: [push, pull_request]
 
@@ -9,6 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
+    - name: Lint YAML Files
+      uses: ibiqlik/action-yamllint@v3
 
     - name: Lint Ansible Playbook
       uses: ansible/ansible-lint-action@master
